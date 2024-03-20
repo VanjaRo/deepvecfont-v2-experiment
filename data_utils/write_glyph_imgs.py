@@ -27,10 +27,7 @@ def write_glyph_imgs_mp(opts):
     opts.charset = charset
     opts.sfd_path = sfd_path
 
-    for root, dirs, files in os.walk(
-        os.path.join(fonts_file_path, opts.split, "roman")
-    ):
-        ttf_names = files
+    ttf_names = os.listdir(os.path.join(fonts_file_path, opts.split, "roman"))
     # ttf_names = ['08343.aspx_id=299524532']
     # ttf_names.sort()
     font_num = len(ttf_names)

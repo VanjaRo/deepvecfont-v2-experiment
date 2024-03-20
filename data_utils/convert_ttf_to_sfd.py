@@ -16,10 +16,7 @@ def convert_mp(opts):
         opts.ttf_path, opts.language
     )  # opts.ttf_path,opts.language,
     sfd_path = os.path.join(opts.sfd_path, opts.language)
-    for root, dirs, files in os.walk(
-        os.path.join(fonts_file_path, opts.split, "roman")
-    ):
-        ttf_fnames = files
+    ttf_fnames = os.listdir(os.path.join(fonts_file_path, opts.split, "roman"))
 
     font_num = len(ttf_fnames)
     process_num = mp.cpu_count() - 1
